@@ -13,6 +13,7 @@ ul {
 }
 img {
   display: block;
+  min-width: 100%;
 }
 *,
 *::before,
@@ -26,6 +27,7 @@ img {
   --background-color: #ffffff;
   --highlight-color: #2196f3;
   --card-set-gap: 30px;
+  --social-color: #afb1b8;
 }
 /*  */
 body {
@@ -126,23 +128,17 @@ body {
   font-size: 14px;
   line-height: 1.14;
   color: var(--secondary-text-color);
-}
-.icon {
-  display: inline-block;
-  width: 16px;
-  height: 12px;
-  stroke-width: 0;
-  stroke: currentColor;
-  fill: red;
+  fill: var(--secondary-text-color);
 }
 
-.icon-envelope {
+.icon-envelope .icon-smartphone {
   width: 1.34375em;
 }
 
 .contacts:hover,
 .contacts:focus {
   color: var(--highlight-color);
+  fill: var(--highlight-color);
 }
 
 /* Герой */
@@ -155,7 +151,11 @@ body {
   text-align: center;
   padding-top: 200px;
   padding-bottom: 200px;
-  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/imghero.jpg");
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url('../images/imghero.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -201,8 +201,8 @@ body {
   margin: 0;
 }
 .list-adv {
-  justify-content: space-between;
   display: flex;
+  justify-content: space-between;
 }
 .advantages:not(:last-child) {
   margin-right: 30px;
@@ -214,9 +214,18 @@ body {
 
 .advantages {
   width: 270px;
+  text-align: center;
   margin: 0;
-  padding: 0;
-  list-style-type: none;
+}
+.thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 270px;
+  height: 120px;
+  background-color: #f5f4fa;
+  border-radius: 4px;
+  margin-bottom: 30px;
 }
 .advantages-title {
   margin-top: 0;
@@ -235,6 +244,7 @@ body {
   line-height: 1.71;
   color: var(--secondary-text-color);
 }
+
 /* Чем мы занимаемся */
 .about-img {
   display: flex;
@@ -274,8 +284,9 @@ body {
 
 .team {
   list-style-type: none;
+}
+.member-photo {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-
 }
 
 .team:not(:last-child) {
@@ -296,10 +307,82 @@ body {
 }
 .position {
   margin: 0;
+  margin-bottom: 16px;
   font-size: 16px;
   line-height: 1.18;
   color: var(--secondary-text-color);
 }
+.icon-list {
+  display: flex;
+  justify-content: space-between;
+  width: 206px;
+  margin: 0 32px;
+}
+.icon-list li {
+  width: 44px;
+  height: 44px;
+  color: var(--social-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.icon-list li:not(:last-child) {
+  margin-right: 10px;
+}
+.icon-list li:hover {
+  color: var(--highlight-color);
+}
+.social-icon:hover {
+  fill: var(--background-color);
+}
+.social-icon {
+  fill: var(--social-color);
+}
+.team-social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: var(--social-color);
+}
+.team-social-links:hover,
+.team-social-list:focus {
+  background-color: var(--highlight-color);
+}
+
+/* Постоянные клиенты */
+.client-list {
+  display: flex;
+  margin-bottom: 50px;
+}
+.client-list > li:not(:last-child) {
+  margin-right: 30px;
+}
+.client {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--social-color);
+  border-radius: 4px;
+  color: var(--social-color);
+}
+.client-icon {
+  fill: var(--social-color);
+}
+.client-icon:hover {
+  fill: var(--highlight-color);
+}
+.client:hover,
+.client:focus {
+  border: 1px solid var(--highlight-color);
+  color: var(--highlight-color);
+}
+
 /* Портфолио */
 
 /* Кнопки */
@@ -312,7 +395,6 @@ body {
   text-align: center;
   display: flex;
   list-style-type: none;
-  /* padding-top: 94px; */
   margin-bottom: 50px;
 }
 .button-list:not(:last-child) {
@@ -347,8 +429,9 @@ body {
   flex-basis: calc(100% / 3 - var(--card-set-gap));
 }
 .project-list-item:hover,
-.project-list-item:focus{
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+.project-list-item:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 .project-list img {
   display: block;
@@ -376,6 +459,9 @@ body {
   padding: 20px 24px;
   border-top: none;
   border: 1px solid #eeeeee;
+}
+.client-icon {
+  display: flex;
 }
 /* Подвал */
 .color-footer {
@@ -423,4 +509,37 @@ body {
 .secondary-contacts:hover,
 .secondary-contacts:focus {
   color: var(--highlight-color);
+}
+
+.footer-icons {
+  display: flex;
+  padding-top: 12px;
+}
+.join-in {
+  text-transform: uppercase;
+  color: var(--background-color);
+  margin-bottom: 20px;
+}
+.footer-icon-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 206px;
+}
+.footer-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--background-color);
+}
+.footer-social-links {
+  fill: var(--background-color);
+}
+.footer-social:hover,
+.footer-social:focus {
+  background-color: var(--highlight-color);
 }
