@@ -6,6 +6,11 @@ h2,
 h3 {
   margin: 0;
 }
+a{
+  text-decoration: none;
+  margin: 0;
+  color: inherit;
+}
 ul {
   list-style: none;
   padding: 0;
@@ -130,7 +135,7 @@ body {
   fill: var(--secondary-text-color);
 }
 
-.icon{
+.icon {
   margin-right: 10px;
 }
 
@@ -214,7 +219,7 @@ body {
 .advantages {
   margin: 0;
 }
-.adv-thumb{
+.adv-thumb {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -281,20 +286,18 @@ body {
 
 .team {
   list-style-type: none;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+    background-color: var(--background-color);
 }
-.member-photo {
- box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-}
+
 
 .team:not(:last-child) {
   margin-right: 30px;
 }
 .members-name {
   text-align: center;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  margin-left: 34px;
-  margin-right: 34px;
+  padding: 30px 34px
 }
 .member-team {
   margin: 0;
@@ -315,15 +318,7 @@ body {
   display: flex;
   justify-content: space-between;
 }
-.icon-list li {
-  width: 44px;
-  height: 44px;
-  color: var(--social-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-}
+
 .icon-list:not(:last-child) {
   margin-right: 10px;
 }
@@ -399,6 +394,8 @@ body {
 .project-button:focus {
   background-color: var(--highlight-color);
   color: var(--background-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .projects-list {
@@ -459,11 +456,11 @@ body {
   padding: 0;
   margin-bottom: 20px;
 }
-.color-footer .container{
+.color-footer .container {
   display: flex;
   align-items: baseline;
 }
-.address-footer{
+.address-footer {
   margin-right: 70px;
 }
 .address-link {
